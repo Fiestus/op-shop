@@ -12,6 +12,9 @@
     <div class="heading">
       <h1><img src="view/image/log.png" alt="" /> <?php echo $heading_title; ?></h1>
       <div class="buttons"><a href="<?php echo $clear; ?>" class="button"><?php echo $button_clear; ?></a></div>
+      <!-- Clear cache:Start -->
+      <div class="buttons"><a href="<?php echo $clearcache; ?>" class="button"><?php echo $button_clearcache; ?></a></div>
+      <!-- Clear cache:End -->
     </div>
     <div class="content">
       <textarea wrap="off" style="width: 98%; height: 300px; padding: 5px; border: 1px solid #CCCCCC; background: #FFFFFF; overflow: scroll;"><?php echo $log; ?></textarea>

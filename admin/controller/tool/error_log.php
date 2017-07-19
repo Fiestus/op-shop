@@ -8,7 +8,12 @@ class ControllerToolErrorLog extends Controller {
 		$this->document->setTitle($this->language->get('heading_title'));
 		
 		$this->data['heading_title'] = $this->language->get('heading_title');
-		 
+		
+		// Clear cache:Start
+		$this->data['button_clearcache'] = $this->language->get('button_clearcache');
+		$this->data['clearcache'] = $this->url->link('tool/error_log/clearcache', 'token=' . $this->session->data['token'], 'SSL');
+		// Clear cache:End
+
 		$this->data['button_clear'] = $this->language->get('button_clear');
 
 		if (isset($this->session->data['success'])) {
@@ -51,7 +56,45 @@ class ControllerToolErrorLog extends Controller {
 				
 		$this->response->setOutput($this->render());
 	}
-	
+
+	// Clear cache:Start
+	public function clearcache() {
+		$this->load->language('tool/error_log');
+		$files = glob(DIR_CACHE . 'cache.*');
+		foreach ($files as $file) {
+			$this->deldir($file);
+		}
+		$imgfiles = glob(DIR_IMAGE . 'cache/*');
+		foreach ($imgfiles as $imgfile) {
+			$this->deldir($imgfile);
+		}
+		$vqmfiles = glob(DIR_SYSTEM . '/../vqmod/vqcache/*');
+		foreach ($vqmfiles as $vqmfile) {
+			$this->deldir($vqmfile);
+		}
+		$this->session->data['success'] = $this->language->get('text_clearcache_success');
+		
+		$this->redirect($this->url->link('tool/error_log', 'token=' . $this->session->data['token'], 'SSL'));
+		}
+	public function deldir($dirname) {
+		if (file_exists($dirname)) {
+			if (is_dir($dirname)) {
+				$dir=opendir($dirname);
+				while ($filename=readdir($dir)) {
+					if ($filename!="." && $filename!="..") {
+						$file=$dirname."/".$filename;
+						$this->deldir($file);
+					}
+				}
+				closedir($dir);
+				rmdir($dirname);
+			} else {
+				@unlink($dirname);
+			}
+		}
+	}
+	// Clear cache:End
+
 	public function clear() {
 		$this->language->load('tool/error_log');
 		
