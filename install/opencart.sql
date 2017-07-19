@@ -1044,9 +1044,7 @@ CREATE TABLE `oc_currency` (
 -- 
 
 INSERT INTO `oc_currency` (`currency_id`, `title`, `code`, `symbol_left`, `symbol_right`, `decimal_place`, `value`, `status`, `date_modified`) VALUES
-(1, 'Рубль', 'RUB', '', ' р.', '2', 29.37199974, 1, '2012-03-31 17:33:53'),
-(2, 'US Dollar', 'USD', '$', '', '2', 1.00000000, 1, '2012-03-31 17:33:53'),
-(3, 'Euro', 'EUR', '', '€', '2', 0.74959999, 1, '2012-03-31 17:33:53');
+(1, 'Тенге', 'KZT', '', ' тг.', '0', 1.00000000, 1, '2012-03-31 17:33:53');
 
 -- --------------------------------------------------------
 
@@ -1657,8 +1655,7 @@ CREATE TABLE `oc_language` (
 -- 
 
 INSERT INTO `oc_language` (`language_id`, `name`, `code`, `locale`, `image`, `directory`, `filename`, `sort_order`, `status`) VALUES
-(1, 'Russian', 'ru', 'ru_RU.UTF-8,ru_RU,russian', 'ru.png', 'russian', 'russian', 1, 1),
-(2, 'English', 'en', 'en_US.UTF-8,en_US,en-gb,english', 'gb.png', 'english', 'english', 2, 1);
+(1, 'Russian', 'ru', 'ru_RU.UTF-8,ru_RU,russian', 'ru.png', 'russian', 'russian', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -3229,18 +3226,18 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `se
 (103, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
 (104, 0, 'config', 'config_weight_class_id', '1', 0),
 (105, 0, 'config', 'config_currency_auto', '1', 0),
-(106, 0, 'config', 'config_currency', 'USD', 0),
+(106, 0, 'config', 'config_currency', 'KZT', 0),
 (107, 0, 'slideshow', 'slideshow_module', 'a:1:{i:0;a:8:{s:9:"banner_id";s:1:"7";s:5:"width";s:3:"980";s:6:"height";s:3:"280";s:11:"resize_type";s:7:"default";s:9:"layout_id";s:1:"1";s:8:"position";s:11:"content_top";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"1";}}', 1),
 (108, 0, 'banner', 'banner_module', 'a:1:{i:0;a:8:{s:9:"banner_id";s:1:"6";s:5:"width";s:3:"182";s:6:"height";s:3:"182";s:11:"resize_type";s:7:"default";s:9:"layout_id";s:1:"3";s:8:"position";s:11:"column_left";s:6:"status";s:1:"1";s:10:"sort_order";s:1:"3";}}', 1),
 (109, 0, 'config', 'config_name', 'Интернет магазин', 0),
 (110, 0, 'config', 'config_owner', 'Мое Имя', 0),
 (111, 0, 'config', 'config_address', 'Адрес', 0),
-(112, 0, 'config', 'config_email', 'admin@store.ru', 0),
+(112, 0, 'config', 'config_email', 'admin@store.kz', 0),
 (113, 0, 'config', 'config_telephone', '123456789', 0),
 (114, 0, 'config', 'config_fax', '', 0),
 (115, 0, 'config', 'config_title', 'Интернет магазин', 0),
 (116, 0, 'config', 'config_meta_description', 'Интернет магазин', 0),
-(117, 0, 'config', 'config_template', 'default', 0),
+(117, 0, 'config', 'config_template', 'shop', 0),
 (118, 0, 'config', 'config_layout_id', '4', 0),
 (119, 0, 'config', 'config_country_id', '109', 0),
 (120, 0, 'config', 'config_zone_id', '1717', 0),
