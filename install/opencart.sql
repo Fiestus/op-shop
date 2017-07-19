@@ -3240,7 +3240,7 @@ INSERT INTO `oc_setting` (`setting_id`, `store_id`, `group`, `key`, `value`, `se
 (114, 0, 'config', 'config_fax', '', 0),
 (115, 0, 'config', 'config_title', 'Интернет магазин', 0),
 (116, 0, 'config', 'config_meta_description', 'Интернет магазин', 0),
-(117, 0, 'config', 'config_template', 'store', 0),
+(117, 0, 'config', 'config_template', 'default', 0),
 (118, 0, 'config', 'config_layout_id', '4', 0),
 (119, 0, 'config', 'config_country_id', '109', 0),
 (120, 0, 'config', 'config_zone_id', '1717', 0),
